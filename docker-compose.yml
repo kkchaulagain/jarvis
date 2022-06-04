@@ -2,8 +2,14 @@ version: "3"
 
 services:
     jarvis:
-        image: kkchaulagain/audio-test:latest
+        image: kkchaulagain/jarvis:latest
         tty: true
         container_name: jarvis
+        environment:
+            - AUDIODEV="hw:Device, 0"
         volumes:
-            - ./:/app/
+            - /dev/shm:/dev/shm 
+            - /etc/machine-id:/etc/machine-id 
+            - /run/user/$uid/pulse:/run/user/$uid/pulse
+            - /var/lib/dbus:/var/lib/dbus
+            - ~/.pulse:/home/$dockerUsername/.pulse

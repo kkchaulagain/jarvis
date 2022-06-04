@@ -15,6 +15,8 @@ class Brain :
     def __init__(self) -> None:
         self.ear = Ear()
         self.mouth = Speaker()
+
+    
     
     def think(self, query) :
         self.query = query
@@ -29,6 +31,14 @@ class Brain :
             return self.deploy()
         elif action == "reply" :
             self.say("Yes sir!")
+        elif action == "introduce" :
+            message = "Hi there! I am Jarvis. What is your name?"
+            self.say(message)
+            query = self.ear.listen()
+            self.say("Nice to meet you Ashok!")
+            message = "I am Jarvis. I am a personal assistant design to help you with your task. "
+            self.say(message)
+
         else :
             return self.executeQuery(self.query)
 
@@ -37,9 +47,8 @@ class Brain :
             return True
         else :
             return False
-
     def wakeUp(self):
-        self.greet()
+        self.say("Jarvis is awake!")
         while True:
             sleep =  self.listenForCommand()
             if sleep :

@@ -11,7 +11,7 @@ class Speaker :
 
     def setCurrentVoice(self):
         voices = self.getVoice()
-        self.engine.setProperty('voice', voices[1].id)
+        self.engine.setProperty('voice', voices[0].id)
 
     def playAllVoices(self):
         voices = self.getVoice()
@@ -23,7 +23,6 @@ class Speaker :
     def getVoice(self):
         # get all available voices
         voices = self.engine.getProperty('voices')
-        print(voices)
         return voices
 
     def say(self, text):

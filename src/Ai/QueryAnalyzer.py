@@ -8,27 +8,38 @@ class QueryAnalyzer:
             {
                 "word": "jarvis",
                 "command": "reply",
+                "type": "query"
+            },{
+
+                "word": "introduce",
+                "command": "introduce",
+                "type": "command"
             },
              {
                 "word": "greetings",
                 "command": "greet",
+                 "type": "query"
             },
             {
                 "word": "listen",
                 "command": "listen",
+                "type": "query"
             },
             {
                 "word": "bro",
-                "command": "greet",
+                "command": "reply",
+                "type": "query"
             },
             {
                 "word": "time",
                 "command": "time",
+                "type": "query"
                 
             },
             {
                 "word": "deploy",
                 "command": "deploy",
+                 "type": "command"
             }
         ]
         self.command = 'query'
@@ -39,6 +50,7 @@ class QueryAnalyzer:
         for word in self.hotWords:
             if word["word"] in self.query_list:
                 self.command = word["command"]
+                self.type = word["type"]
                 return self.command
 
     def getCommand(self):
