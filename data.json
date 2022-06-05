@@ -1,0 +1,421 @@
+[
+    {
+        "prompt": "change to bookmundi",
+        "completion": [
+            {
+                "action": "change_directory",
+                "project": "bookmundi"
+            }
+        ]
+    },
+    {
+        "prompt":"create pull request from today's deploy branch to master",
+        "completion": [
+            {
+                "action": "git_create_pr",
+                "source_branch": "deploy",
+                "target_branch": "master"
+            }
+        ]
+    },
+    {
+        "prompt":"checkout today's deploy branch",
+        "completion": [
+            {
+                "action": "git_checkout",
+                "branch": "deploy"
+            }
+        ]
+    },
+    {
+        "prompt":"checkout master branch",
+        "completion": [
+            {
+                "action": "git_checkout",
+                "branch": "master"
+            }
+        ]
+    },
+    {
+        "prompt":"checkout stage branch",
+        "completion": [
+            {
+                "action": "git_checkout",
+                "branch": "stage"
+            }
+        ]
+    },
+    {
+        "prompt":"checkout uat branch",
+        "completion": [
+            {
+                "action": "git_checkout",
+                "branch": "uat"
+            }
+        ]
+    },
+    {
+        "prompt":"create a new branch named hotfix/{hotfix_name}",
+        "completion": [
+            {
+                "action": "git_create_branch",
+                "branch": "hotfix/{hotfix_name}"
+            }
+        ]
+    },
+    {
+        "prompt":"checkout hotfix/{hotfix_name}",
+        "completion": [
+            {
+                "action": "git_checkout",
+                "branch": "hotfix/{hotfix_name}"
+            }
+        ]
+    },
+    {
+        "prompt":"merge hotfix/{hotfix_name} into master",
+        "completion": [
+            {
+                "action": "git_merge",
+                "branch": "hotfix/{hotfix_name}",
+                "target_branch": "master"
+            }
+        ]
+    },
+    {
+        "prompt":"push hotfix/{hotfix_name} to origin",
+        "completion": [
+            {
+                "action": "git_push",
+                "branch": "hotfix/{hotfix_name}",
+                "remote": "origin"
+            }
+        ]
+    },
+    {
+        "prompt":"create a new branch named feature/{feature_name}",
+        "completion": [
+            {
+                "action": "git_create_branch",
+                "branch": "feature/{feature_name}"
+            }
+        ]
+    },
+    {
+        "prompt":"checkout feature/{feature_name}",
+        "completion": [
+            {
+                "action": "git_checkout",
+                "branch": "feature/{feature_name}"
+            }
+        ]
+    },
+    {
+        "prompt":"merge feature/{feature_name} into master",
+        "completion": [
+            {
+                "action": "git_merge",
+                "branch": "feature/{feature_name}",
+                "target_branch": "master"
+            }
+        ]
+    },
+    {
+        "prompt":"push feature/{feature_name} to origin",
+        "completion": [
+            {
+                "action": "git_push",
+                "branch": "feature/{feature_name}",
+                "remote": "origin"
+            }
+        ]
+    },
+    {
+        "prompt":"create a new branch named release/{release_name}",
+        "completion": [
+            {
+                "action": "git_create_branch",
+                "branch": "release/{release_name}"
+            }
+        ]
+    },
+    {
+        "prompt":"checkout release/{release_name}",
+        "completion": [
+            {
+                "action": "git_checkout",
+                "branch": "release/{release_name}"
+            }
+        ]
+    },
+    {
+        "prompt":"merge release/{release_name} into master",
+        "completion": [
+            {
+                "action": "git_merge",
+                "branch": "release/{release_name}",
+                "target_branch": "master"
+            }
+        ]
+    },
+    {
+        "prompt":"push release/{release_name} to origin",
+        "completion": [
+            {
+                "action": "git_push",
+                "branch": "release/{release_name}",
+                "remote": "origin"
+            }
+        ]
+    },
+    {
+        "prompt":"create a new branch named hotfix/{hotfix_name}",
+        "completion": [
+            {
+                "action": "git_create_branch",
+                "branch": "hotfix/{hotfix_name}"
+            }
+        ]
+    },
+    {
+        "prompt":"checkout hotfix/{hotfix_name}",
+        "completion": [
+            {
+                "action": "git_checkout",
+                "branch": "hotfix/{hotfix_name}"
+            }
+        ]
+    },
+    {
+        "prompt":"merge hotfix/{hotfix_name} into master",
+        "completion": [
+            {
+                "action": "git_merge",
+                "branch": "hotfix/{hotfix_name}",
+                "target_branch": "master"
+            }
+        ]
+    },
+    {
+        "prompt":"delete hotfix/{hotfix_name}",
+        "completion": [
+            {
+                "action": "git_delete_branch",
+                "branch": "hotfix/{hotfix_name}"
+            }
+        ]
+    },
+    {
+        "prompt":"Hi",
+        "completion": [
+            {
+                "action": "echo",
+                "message": "Hi"
+            }
+        ]
+    },
+    {
+        "prompt":"fetch me a tea",
+        "completion": [
+            {
+                "action": "echo",
+                "message": "Command not found",
+                "error": true
+            }
+        ]
+    }   ,{
+        "prompt": "start deployment process",
+        "completion": [
+            {
+                "action": "change_directory",
+                "project": "bookmundi"
+            },
+            {
+                "action": "git_status"
+            },
+            {
+                "action": "git_checkout",
+                "branch": "uat"
+            },
+            {
+                "action": "git_pull",
+                "branch": "uat"
+            },
+            {
+                "action": "git_checkout_new",
+                "branch": "deploy"
+            },
+            {
+                "action": "git_push",
+                "branch": "deploy"
+            },
+            {
+                "action": "git_create_pr",
+                "source_branch": "deploy",
+                "target_branch": "master"
+            }
+        ]
+    },
+    {
+        "prompt": "start deployment process of bookmundi",
+        "completion": [
+            {
+                "action": "change_directory",
+                "project": "bookmundi"
+            },
+            {
+                "action": "git_status"
+            },
+            {
+                "action": "git_checkout",
+                "branch": "uat"
+            },
+            {
+                "action": "git_pull",
+                "branch": "uat"
+            },
+            {
+                "action": "git_checkout_new",
+                "branch": "deploy"
+            },
+            {
+                "action": "git_push",
+                "branch": "deploy"
+            },
+            {
+                "action": "git_create_pr",
+                "source_branch": "deploy",
+                "target_branch": "master"
+            }
+        ]
+    },
+    {
+        "prompt": "start deployment process of bookmundi from uat",
+        "completion": [
+            {
+                "action": "change_directory",
+                "project": "bookmundi"
+            },
+            {
+                "action": "git_status"
+            },
+            {
+                "action": "git_checkout",
+                "branch": "uat"
+            },
+            {
+                "action": "git_pull",
+                "branch": "uat"
+            },
+            {
+                "action": "git_checkout_new",
+                "branch": "deploy"
+            },
+            {
+                "action": "git_push",
+                "branch": "deploy"
+            },
+            {
+                "action": "git_create_pr",
+                "source_branch": "deploy",
+                "target_branch": "master"
+            }
+        ]
+    },
+    {
+        "prompt": "start deployment process of bookmundi from uat to deploy",
+        "completion": [
+            {
+                "action": "change_directory",
+                "project": "bookmundi"
+            },
+            {
+                "action": "git_status"
+            },
+            {
+                "action": "git_checkout",
+                "branch": "uat"
+            },
+            {
+                "action": "git_pull",
+                "branch": "uat"
+            },
+            {
+                "action": "git_checkout_new",
+                "branch": "deploy"
+            },
+            {
+                "action": "git_push",
+                "branch": "deploy"
+            },
+            {
+                "action": "git_create_pr",
+                "source_branch": "deploy",
+                "target_branch": "master"
+            }
+        ]
+    },
+    {
+        "prompt": "deploy bookmundi from uat to deploy",
+        "completion": [
+            {
+                "action": "change_directory",
+                "project": "bookmundi"
+            },
+            {
+                "action": "git_status"
+            },
+            {
+                "action": "git_checkout",
+                "branch": "uat"
+            },
+            {
+                "action": "git_pull",
+                "branch": "uat"
+            },
+            {
+                "action": "git_checkout_new",
+                "branch": "deploy"
+            },
+            {
+                "action": "git_push",
+                "branch": "deploy"
+            },
+            {
+                "action": "git_create_pr",
+                "source_branch": "deploy",
+                "target_branch": "master"
+            }
+        ]
+    },{
+ "prompt":"Punch bookmundi to live",    "completion": [
+            {
+                "action": "change_directory",
+                "project": "bookmundi"
+            },
+            {
+                "action": "git_status"
+            },
+            {
+                "action": "git_checkout",
+                "branch": "uat"
+            },
+            {
+                "action": "git_pull",
+                "branch": "uat"
+            },
+            {
+                "action": "git_checkout_new",
+                "branch": "deploy"
+            },
+            {
+                "action": "git_push",
+                "branch": "deploy"
+            },
+            {
+                "action": "git_create_pr",
+                "source_branch": "deploy",
+                "target_branch": "master"
+            }
+        ]
+    }]
