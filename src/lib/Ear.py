@@ -4,7 +4,7 @@ class Ear :
     def __init__(self):
         self.recognizer = sr.Recognizer()
         self.pause_threshold = 0.5
-        self.listen_threshold = 5
+        self.listen_threshold = 2
         self.response_threshold = 0.5
         self.recognizer.pause_threshold = self.pause_threshold
         self.recognizer.listen_threshold = self.listen_threshold
@@ -16,7 +16,7 @@ class Ear :
 
     def listen(self):
         with sr.Microphone() as source:
-            self.recognizer.adjust_for_ambient_noise(source, duration=1)
+            # self.recognizer.adjust_for_ambient_noise(source, duration=1)
             audio = self.recognizer.listen(source)
             try:
                 query =  self.recognizer.recognize_google(audio, language='en-in')

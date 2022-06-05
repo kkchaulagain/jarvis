@@ -62,9 +62,9 @@ class GitAssistant :
         brain.say("Pulled latest changes")
         date = self.getCurrentDate()
         newBranch = "deploy/"+date
-        self.checkoutToNewBranch(newBranch)
+        # self.checkoutToNewBranch(newBranch)
         brain.say("Checked out to new branch")
 
-        self.push_to_remote()
+        # self.push_to_remote()
         brain.say("Pushed to remote")
         self.brain.say("Deployment Complete")
