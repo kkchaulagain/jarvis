@@ -24,52 +24,52 @@ class Brain :
        print(s);
 
     def think(self, query) :
-        self.query = query
-        ada = Davinci()
-        completion = ada.analyze(query)
-        if(completion == False):
-            return False
-        else:
-            # completion = self.json_from_s(completion)
-            print(completion)
-            print(type(completion))
-            # with open('output.json', 'w') as outfile:
-            #     json.dump(completion, outfile)
+        # self.query = query
+        # ada = Davinci()
+        # completion = ada.analyze(query)
+        # if(completion == False):
+        #     return False
+        # else:
+        #     # completion = self.json_from_s(completion)
+        #     print(completion)
+        #     print(type(completion))
+        #     # with open('output.json', 'w') as outfile:
+        #     #     json.dump(completion, outfile)
 
-            # completion = json.loads(completion)
-            print(completion)
-            completion = completion.replace("\'", "\"")
+        #     # completion = json.loads(completion)
+        #     print(completion)
+        #     completion = completion.replace("\'", "\"")
 
-            completion = json.loads(completion)
+        #     completion = json.loads(completion)
            
-            # loop through the completion
-            for i in completion:
-                print(i)
-                self.say(i['action'])
+        #     # loop through the completion
+        #     for i in completion:
+        #         print(i)
+        #         self.say(i['action'])
             
-            return False
+            # return False
 
-        # self.analyzer = QueryAnalyzer(query)
-        # action = self.analyzer.getCommand()
-        # # check if query is a command
-        # if action == "greet" :
-        #     return self.greet()
-        # elif action == "time" :
-        #     return self.sayTime()
-        # elif action == "deploy" :
-        #     return self.deploy()
-        # elif action == "reply" :
-        #     self.say("Yes sir!")
-        # elif action == "introduce" :
-        #     message = "Hi there! I am Jarvis. What is your name?"
-        #     self.say(message)
-        #     query = self.ear.listen()
-        #     self.say("Nice to meet you Ashok!")
-        #     message = "I am Jarvis. I am a personal assistant design to help you with your task. "
-        #     self.say(message)
+        self.analyzer = QueryAnalyzer(query)
+        action = self.analyzer.getCommand()
+        # check if query is a command
+        if action == "greet" :
+            return self.greet()
+        elif action == "time" :
+            return self.sayTime()
+        elif action == "deploy" :
+            return self.deploy()
+        elif action == "reply" :
+            self.say("Yes sir!")
+        elif action == "introduce" :
+            message = "Hi there! I am Jarvis. What is your name?"
+            self.say(message)
+            query = self.ear.listen()
+            self.say("Nice to meet you Ashok!")
+            message = "I am Jarvis. I am a personal assistant design to help you with your task. "
+            self.say(message)
 
-        # else :
-        #     return self.executeQuery(self.query)
+        else :
+            return self.executeQuery(self.query)
 
     def isCommand(self, query) :
         if query.startswith("jarvis") :
